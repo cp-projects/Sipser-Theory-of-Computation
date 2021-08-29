@@ -1,9 +1,18 @@
 #include <iostream>
 #include <map>
 #include <set>
+//#include <pair>
+#include <typeinfo>
 
 using namespace std;
 
+
+typedef struct stateTrans {
+
+    char state;
+    char transition;
+
+}state;
 
 map<pair<char, char>, char> delta = {
 
@@ -29,21 +38,36 @@ map<pair<char, char>, char> delta = {
 };
 
 
+typedef map<pair<char, char>, char> Map_Type;
 
-map<char, char> delta2 = {
+Map_Type delta2 = {
 
+
+
+//p<char, int> delta2 = {
+
+//cout << typeid(pair<char, char> q1).name() << endl;
+//map<pair<char, char>,  char> delta2 = { 
+
+ /*   
     {'h', 'a'},
     {'e', 'b'},
     {'l', 'c'},
     {'l', 'd'},
     {'o', 'e'},
+*/
 
 
-   /*	
-    {{'h','d'}, 'a'},
-    {{'e', 'd'}, 'b'},
-    {{'l', 'd'}, 'c'},
-    */
+    //pair<char, char> PAIR1;
+    
+     
+    //p = make_pair('h', 'a'); 
+    
+    //{q1, 'a'},
+    
+    //lta2.insert(std::make_pair(std::make_pair('e', 'd'), 'b')),
+    //{{'l', 'd'}, 'c'},
+    
 
 };
 
@@ -58,7 +82,7 @@ bool accept(string w){
     for(char a: w){
        //cout << a << ' ';
        
-	cout << delta2[a] << ' ';
+	//cout << delta2[a] << ' ';
 
         }
 
@@ -80,7 +104,18 @@ int main(){
 
     set<char> F = {'o'};
 
+    char x = 'y';
 
+
+    pair<char, char> q0 = {'c', 'f'};
+
+    cout << q0.first << ' ' << q0.second << endl;
+
+    cout << delta[q0] << '\n';
+    
+
+    
+    // cout << typeid(F).name() << '\n';
 
     accept("hello"); 
     
