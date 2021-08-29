@@ -1,19 +1,17 @@
 #include <iostream>
 #include <map>
 #include <set>
-//#include <pair>
 #include <typeinfo>
 
 using namespace std;
 
 
-typedef struct stateTrans {
 
-    char state;
-    char transition;
-
-}state;
-
+/*
+ *
+ * Define the transition function
+ *
+ * */
 map<pair<char, char>, char> delta = {
 
 //start state
@@ -33,56 +31,34 @@ map<pair<char, char>, char> delta = {
 {{'o', 'r'}, 'o'},
 {{'o', 'b'}, 'o'},
 
-
         
-};
-
-
-typedef map<pair<char, char>, char> Map_Type;
-
-Map_Type delta2 = {
+                     };
 
 
 
-//p<char, int> delta2 = {
-
-//cout << typeid(pair<char, char> q1).name() << endl;
-//map<pair<char, char>,  char> delta2 = { 
-
- /*   
-    {'h', 'a'},
-    {'e', 'b'},
-    {'l', 'c'},
-    {'l', 'd'},
-    {'o', 'e'},
-*/
-
-
-    //pair<char, char> PAIR1;
-    
-     
-    //p = make_pair('h', 'a'); 
-    
-    //{q1, 'a'},
-    
-    //lta2.insert(std::make_pair(std::make_pair('e', 'd'), 'b')),
-    //{{'l', 'd'}, 'c'},
-    
-
-};
-
-
-
-
-
-bool accept(string w){
-
-    char q;
+/*
+ *  There is no literal accept state here as it is modeling
+ *
+ *  the continuous process of an automatic door but the bool accept
+ *
+ *  function is being used to create a general standard for how I 
+ *
+ *  code DFAs 
+ *
+ * */
+bool accept(string w, char q){
+ 
 
     for(char a: w){
-       //cout << a << ' ';
+        
        
-	//cout << delta2[a] << ' ';
+        pair<char, char> q0 = {q, a};
+       
+	cout << "state " << q << " reads " << a << " and transition to " << delta[q0] << '\n';
+
+	q = delta[q0];
+
+
 
         }
 
@@ -104,20 +80,9 @@ int main(){
 
     set<char> F = {'o'};
 
-    char x = 'y';
-
-
-    pair<char, char> q0 = {'c', 'f'};
-
-    cout << q0.first << ' ' << q0.second << endl;
-
-    cout << delta[q0] << '\n';
     
 
-    
-    // cout << typeid(F).name() << '\n';
-
-    accept("hello"); 
+    accept("frbnbrfrnfrnb", 'c'); 
     
     
 
