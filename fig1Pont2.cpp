@@ -6,7 +6,6 @@
 using namespace std;
 
 
-
 /*
  *
  * Define the transition function
