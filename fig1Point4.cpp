@@ -70,7 +70,7 @@ bool accept (vector<int> w, int q0){
 
 int main(){
 
-vector<int> w = {0,0,1,1,0,1,0};
+vector<int> w = {0,0,1,1,0,1,1};
 
 accept(w, 1);
 
