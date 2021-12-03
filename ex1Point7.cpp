@@ -34,7 +34,7 @@ bool accept(vector<int> w, int q0){
 
      if(F.find(q0) != F.end())
      {
-         cout << "Acccepted" << '\n';
+         cout << "Accepted" << '\n';
          return true;
      
          }
